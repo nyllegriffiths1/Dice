@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/styles.css" />
-    <title>Threshold</title>
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
 <body>
     <div class="game-container">
@@ -12,23 +12,25 @@
         <div class="player-container">
             <div class="player" id="player1">
                 <h2>Player 1</h2>
-                <p>Score: <span class="score" id="score1">0</span></p>
+                <p>Total Score: <span class="score" id="score1">0</span></p>
+                <p>Current Score: <span class="current" id="current1">0</span></p>
                 <button class="roll-btn" id="roll1">Roll Dice</button>
+                <button class="hold-btn" id="hold1">Hold Score</button>
             </div>
-
             <div class="player" id="player2">
-                <h2>Player 1</h2>
-                <p>Score: <span class="score" id="score2">0</span></p>
+                <h2>Player 2</h2>
+                <p>Total Score: <span class="score" id="score2">0</span></p>
+                <p>Current Score: <span class="current" id="current2">0</span></p>
                 <button class="roll-btn" id="roll2" disabled>Roll Dice</button>
+                <button class="hold-btn" id="hold2" disabled>Hold Score</button>
             </div>
         </div>
         <div class="dice">
-            <img src="/images/dice-1.svg" alt="Dice" id="dice-img"/>
+            <img src="/images/dice-1.svg" alt="Dice" id="dice-img">
         </div>
         <button id="reset-btn">Reset Game</button>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>   
+    <script src="/js/script.js"></script>
 </body>
 </html>
