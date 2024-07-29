@@ -22,14 +22,24 @@ $(document).ready(function() {
     }
 
     function holdScore() {
-        scores[currentPlayer - 1] += currentScore;
-        $(`#score${currentPlayer}`).text(scores[currentPlayer - 1]);
+        const combinedScore = scores[currentPlayer - 1] + currentScore;
 
-        if (scores[currentPlayer - 1] >= winningScore) {
-            alert(`Player ${currentPlayer} wins!`);
+        if (combinedScore > winningScore) {
+            alert(`Player ${currentPlayer} loses!`);
             resetGame();
+            return;
+        } else if (combinedScore >= winningScore - 6) {
+            scores[currentPlayer - 1] += currentScore;
+            $(`#score${currentPlayer}`).text(scores[currentPlayer - 1]);
+
+            if (scores[currentPlayer - 1] === winningScore) {
+                alert(`Player ${currentPlayer} wins!`);
+                resetGame();
+            } else {
+                switchPlayer();
+            }
         } else {
-            switchPlayer();
+            alert(`You can only hold your score if your combined score is within 6 of the winning score.`);
         }
     }
 
